@@ -102,6 +102,13 @@ yum clean packages       # 清除缓存目录下的软件包
 yum clean headers        # 清除缓存目录下的 headers
 yum clean oldheaders     # 清除缓存目录下旧的 headers
 ```
+**仓库管理**
+（使用yum-config-manager命令需要安装yum-utils工具包集合）
+```
+yum-config-manager --add-repo repository_url       #添加repository_url到资源库（/etc/yum.repos.d/）
+yum-config-manager --disable repository_Name       #禁用repository_Name仓库
+yum-config-manager --enable repository_Name        #启动repository_Name仓库
+```
 
 **更多实例**
 
@@ -114,6 +121,7 @@ name=nginx repo
 baseurl=http://nginx.org/packages/centos/6/$basearch/
 gpgcheck=0
 enabled=1
+
 
 # yum mirror
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
